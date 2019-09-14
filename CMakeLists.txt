@@ -35,3 +35,5 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 
 add_library(MousePlugin SHARED mouse_plugin/MousePlugin.cc)
 target_link_libraries(MousePlugin	 ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
+
+install(TARGETS maze_plugin MousePlugin DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/gazebo_plugins)
