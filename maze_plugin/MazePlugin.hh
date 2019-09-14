@@ -75,7 +75,7 @@ namespace gazebo {
       std::default_random_engine generator;
       std::uniform_int_distribution<int> neighbor_dist;
 
-      constexpr static int MAZE_SIZE = 16;
+      constexpr static int MAZE_SIZE = 10;
       const static float WALL_LENGTH,
             WALL_HEIGHT,
             WALL_THICKNESS,
