@@ -2,7 +2,7 @@
 <sdf version='1.6'>
   <model name='maze_base'>
     <static>true</static>
-    <link name='base'>
+    <!--<link name='base'>
       <pose frame=''>0 0 0 0 0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -48,7 +48,7 @@
           </friction>
         </surface>
       </collision>
-    </link>
+    </link>-->
     <link name='hole_1'>
       <pose frame=''>5.5 1.5 0 0 0 0</pose>
       <self_collide>0</self_collide>
@@ -89,6 +89,25 @@
     </link>
     <link name='hole_3'>
       <pose frame=''>-4.5 2.5 0 0 0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <visual name='visual'>
+        <pose frame=''>0 0 0.003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1 1 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name='hole_4'>
+      <pose frame=''>-5.5 -5.5 0 0 0 0</pose>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <visual name='visual'>
