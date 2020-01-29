@@ -291,6 +291,7 @@ msgs::Pose *MazePlugin::CreatePose(int row, int col, float z, Direction dir) {
   msgs::Pose *pose = new msgs::Pose;
   pose->set_allocated_orientation(orientation);
   pose->set_allocated_position(position);
+  return pose;
 }
 
 msgs::Geometry *MazePlugin::CreateCylinderGeometry(float r, float l)
