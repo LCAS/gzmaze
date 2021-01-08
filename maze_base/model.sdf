@@ -1,7 +1,8 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
   <model name='maze_base'>
-    <link name='base'>
+    <static>true</static>
+    <!--<link name='base'>
       <pose frame=''>0 0 0 0 0 0</pose>
       <inertial>
         <mass>1</mass>
@@ -18,10 +19,10 @@
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
       <visual name='visual'>
-        <pose frame=''>0 0 0.0025 0 0 0</pose>
+        <pose frame=''>0 0 -0.0025 0 0 0</pose>
         <geometry>
           <box>
-            <size>2.892 2.892 0.005</size>
+            <size>20 20 0.000001</size>
           </box>
         </geometry>
         <material>
@@ -32,10 +33,10 @@
         </material>
       </visual>
       <collision name='collision'>
-        <pose frame=''>0 0 0.0025 0 0 0</pose>
+        <pose frame=''>0 0 -0.0025 0 0 0</pose>
         <geometry>
           <box>
-            <size>2.892 2.892 0.005</size>
+            <size>20 20 0.000001</size>
           </box>
         </geometry>
         <surface>
@@ -47,6 +48,101 @@
           </friction>
         </surface>
       </collision>
+    </link>-->
+    <link name='hole_1'>
+      <pose frame=''>5.5 1.5 0 0 0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <visual name='visual'>
+        <pose frame=''>0 0 0.003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1 1 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name='hole_2'>
+      <pose frame=''>3.5 3.5 0 0 0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <visual name='visual'>
+        <pose frame=''>0 0 0.003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1 1 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name='hole_3'>
+      <pose frame=''>-4.5 2.5 0 0 0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <visual name='visual'>
+        <pose frame=''>0 0 0.003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1 1 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name='hole_4'>
+      <pose frame=''>-5.5 -5.5 0 0 0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <visual name='visual'>
+        <pose frame=''>0 0 0.003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1 1 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <link name='destination'>
+      <pose frame=''>5.5 -5.5 0 0 0 0</pose>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <visual name='visual'>
+        <pose frame=''>0 0 0.003 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1 1 0.005</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Green</name>
+          </script>
+        </material>
+      </visual>
     </link>
   </model>
 </sdf>

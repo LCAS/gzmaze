@@ -9,12 +9,12 @@
 namespace gazebo
 {
 
-const float MazePlugin::UNIT = 0.18; //distance between centers of squares
-const float MazePlugin::WALL_HEIGHT = 0.05;
-const float MazePlugin::WALL_LENGTH = 0.192;
+const float MazePlugin::UNIT = 1.0; //distance between centers of squares
+const float MazePlugin::WALL_HEIGHT = 1.00;
+const float MazePlugin::WALL_LENGTH = 1.0;
 const float MazePlugin::WALL_THICKNESS = 0.012;
 const float MazePlugin::BASE_HEIGHT = 0.005;
-const float MazePlugin::PAINT_THICKNESS = 0.01;
+const float MazePlugin::PAINT_THICKNESS = 0.2;
 
 MazePlugin::MazePlugin() : neighbor_dist(0, 3)
 {}
@@ -49,6 +49,7 @@ void MazePlugin::Regenerate(ConstGzStringPtr &msg)
   }
 
   model->GetAttribute("name")->Set("my_maze");
+  model->GetElement("static")->Set(1);
   model->GetElement("pose")->Set(ignition::math::Pose3d(0.0, 0.0, 0.0, 0.0, 0.0, 0.0));
   parent->InsertModelSDF(*modelSDF);
 }
@@ -235,7 +236,7 @@ std::list<sdf::ElementPtr> MazePlugin::CreateWallVisual(int row, int col, Direct
   msgs::Material_Script *paint_script = new msgs::Material_Script();
   std::string *uri = paint_script->add_uri();
   *uri = "file://media/materials/scripts/gazebo.material";
-  paint_script->set_name("Gazebo/Red");
+  paint_script->set_name("Gazebo/Yellow");
 
   msgs::Material *paint_material = new msgs::Material();
   paint_material->set_allocated_script(paint_script);
