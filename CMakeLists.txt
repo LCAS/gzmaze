@@ -17,7 +17,7 @@ target_link_libraries(regenerate_widget Qt5::Widgets Qt5::Core ${GAZEBO_LIBRARIE
 add_library(maze_plugin SHARED maze_plugin/maze_plugin.cc)
 target_include_directories(maze_plugin PUBLIC ${GAZEBO_INCLUDE_DIRS})
 target_link_libraries(maze_plugin ${GAZEBO_LIBRARIES})
-target_link_directories(maze_plugin PUBLIC ${GAZEBO_LIBRARY_DIRS})
+#target_link_directories(maze_plugin PUBLIC ${GAZEBO_LIBRARY_DIRS})
 
 add_library(MousePlugin SHARED mouse_plugin/mouse_plugin.cc)
 target_include_directories(MousePlugin PUBLIC ${GAZEBO_INCLUDE_DIRS})
